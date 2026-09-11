@@ -1,0 +1,11 @@
+# 统一按 LF 存储，避免在不同平台 clone 后 skill 文件行尾发生变化
+* text=auto eol=lf
+
+# 二进制文件不做转换
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.zip binary

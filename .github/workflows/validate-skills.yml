@@ -1,0 +1,17 @@
+name: validate-skills
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: 校验 skill 结构、frontmatter 与命名
+        run: node scripts/validate-skills.mjs
