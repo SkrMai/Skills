@@ -71,5 +71,5 @@ node scripts/validate-skills.mjs
 - **frontmatter**：必须包含 `name`、`version`、`description`；可选 `whenToUse`
 - **主文件纪律**：长清单、模板、决策树下沉到 `references/`，`SKILL.md` 只保留触发条件与规则，避免主文件膨胀
 - **写法**：规则写成可判定条件（“不得…”“必须…”），不写成“要更注意…”这类劝告
-- **版本**：结构变更（目录改名、文件移动）与内容变更都记入 [CHANGELOG.md](CHANGELOG.md)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)
+- **版本**：**仓库本身不设版本号**，版本归属于单个 skill，以其 `SKILL.md` frontmatter 的 `version` 为准（遵循 [语义化版本](https://semver.org/lang/zh-CN/)）。某个 skill 的结构或内容变更记入 [CHANGELOG.md](CHANGELOG.md) 中该 skill 的小节；仓库新增 skill 时只增加这个新 skill 的版本，不动已有 skill 的版本号
 - **新增 skill 的步骤**：新建 `<分类>/<skill>/SKILL.md` → 跑一次校验 → 更新本文件清单表 → 在 CHANGELOG 记录 → 提交
