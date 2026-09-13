@@ -4,7 +4,17 @@
 
 格式参考 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，版本号遵循 [语义化版本](https://semver.org/lang/zh-CN/)。
 
+文件分为两部分：各 skill 的版本变更（`## <skill 名>`），以及文件末尾的 [仓库（不设版本号）](#仓库不设版本号)（按日期记录脚手架、全局约定与跨 skill 改动）。
+
 ## prompt-mentor
+
+### [0.4.1] - 2026-09-13
+
+输出形态的自检补位，并把仓库脚手架内容移出 skill 版本条目。
+
+#### 变更
+
+- **迭代记录新增输出形态诊断项**（templates/iteration-log.md）：补三条——回复末尾又出现"教学 / 导师建议"板块（教学应内联在【优化后的需求描述】里）、【优化后的需求描述】又写成一整段、待确认项缺 AI 推荐项或没排在回复最末。
 
 ### [0.4.0] - 2026-09-13
 
@@ -17,10 +27,6 @@
 - **待确认内容移到回复最末**（stage1-clarify.md 第 4 与第 8 节）：段落顺序固定为需求描述 → 需求清单 → 项目文档摘要 → 任务数 → 【需要确认】→【我的设计建议】；需要用户拍板的内容不再夹在中间，需求描述内部也不再内嵌"需要确认"。
 - **每条待确认项与每条设计建议必须给 AI 推荐项**（stage1-clarify.md 第 4、5、8 节，requirements-by-type.md）：格式为 `**推荐：<选项>** —— <一句理由>`；确实无倾向时明说"两者皆可 —— 取决于……"，不得只列选项不给推荐。
 - **自检与反模式同步**（quality-checklist.md）：教学项改为检查结构（逐条成块、必写三项、内联说明 ≤2 条、末尾无教学板块）；交互反模式补"只列选项不给推荐""待确认问题夹在中段"。
-
-#### 仓库结构
-
-- `README.md` skill 清单同步至 0.4.0。
 
 ### [0.3.0] - 2026-09-13
 
@@ -41,10 +47,6 @@
 - **触发词与产物对齐**（SKILL.md frontmatter）：删除「提示词 / 帮我写prompt / prompt生成 / prompt导师」等指向"替我写一段文本"的触发词，改为「优化需求 / 怎么描述需求 / 需求澄清 / 需求共识 / 需求描述 / 共识包」。
 - **回退细则归位**（stage4-execute.md 第 3 节）："回退时保留仍然有效的工作"由指针文件移回权威文件。
 - **反模式清单加权威指针**（quality-checklist.md）：保留自检条目，补上各组主题的权威文件指向。
-
-#### 仓库结构
-
-- `README.md` skill 清单同步至 0.3.0 与新产物描述。
 
 ### [0.2.0] - 2026-09-13
 
@@ -90,12 +92,6 @@ prompt-mentor 首个版本。基于一次真实使用（为用户本地知识库
 
 - 修正 `references/redesign-audit.md` 中对 SKILL.md 章节号的引用（2.4 → 2.5）。
 
-#### 仓库结构
-
-- skill 按领域分类存放：`<分类>/<skill>/SKILL.md`，最多两层，不再往下嵌套。当前为 `engineering/prompt-mentor/`
-- 新增 `scripts/validate-skills.mjs`：校验 skill 目录结构、frontmatter 必填字段（`name`/`version`/`description`）、目录名与 `name` 一致性、`version` 语义化格式、全局重名
-- 新增 `.github/workflows/validate-skills.yml`：push 与 PR 时自动运行校验
-
 #### 0.1.0 改造对应的 9 个原始问题
 
 | # | 问题 | 对应改动 |
@@ -109,3 +105,20 @@ prompt-mentor 首个版本。基于一次真实使用（为用户本地知识库
 | 7 | 修正已实现功能的提示词缺少「修正什么 / 保持不动什么」二分结构 | 新增：修正类任务三段结构 |
 | 8 | 肯定式完成条件封不住「换个形式加回来」的路径 | 新增：否定式完成条件 |
 | 9 | 导师建议产出抽象方法论，对用户无用 | 变更：教学改为原话精确化改写 |
+
+---
+
+## 仓库（不设版本号）
+
+仓库脚手架、全局约定与跨 skill 的改动记录在这里，按日期排列，不设版本号。
+
+### 2026-09-13
+
+- **版本模型改为按 skill 记录**：本文件由单一版本改为按 skill 分节；每个 skill 的版本条目只保留它自己的能力变更，仓库相关内容移入本节。
+- `README.md` 的 skill 清单行随 skill 版本同步更新（prompt-mentor 0.3.0、0.4.0、0.4.1 各同步一次）。
+
+### 2026-09-11
+
+- skill 按领域分类存放：`<分类>/<skill>/SKILL.md`，最多两层，不再往下嵌套。当前为 `engineering/prompt-mentor/`
+- 新增 `scripts/validate-skills.mjs`：校验 skill 目录结构、frontmatter 必填字段（`name`/`version`/`description`）、目录名与 `name` 一致性、`version` 语义化格式、全局重名
+- 新增 `.github/workflows/validate-skills.yml`：push 与 PR 时自动运行校验

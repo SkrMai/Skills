@@ -37,7 +37,7 @@ cd Skills && git sparse-checkout set engineering/prompt-mentor
 
 | 分类 | Skill | 版本 | 用途 |
 |------|-------|------|------|
-| engineering | [prompt-mentor](engineering/prompt-mentor/) | 0.4.0 | 需求共识导师。把模糊的项目需求澄清为原子化的需求清单，产出带可验证停止条件的共识包；用户放行后可在同一窗口切换为资深工程师角色就地执行，也可只要共识包。只读项目文档，读代码仅用于核实需求侧事实 |
+| engineering | [prompt-mentor](engineering/prompt-mentor/) | 0.4.1 | 需求共识导师。把模糊的项目需求澄清为原子化的需求清单，产出带可验证停止条件的共识包；用户放行后可在同一窗口切换为资深工程师角色就地执行，也可只要共识包。只读项目文档，读代码仅用于核实需求侧事实 |
 
 ## 目录结构
 
