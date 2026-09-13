@@ -33,6 +33,10 @@
 - [ ] 是否没有借"轻量"之名省掉可验证停止条件、否定式条件或防分叉条款
 - [ ] 对用户原话做了语义改动（收窄 / 扩大 / 合并 / 拆分 / 加约束）的条目是否标注 `⚠ 已改写` 并单独说明，没有与纯措辞润色混在一起
 
+- [ ] 有交互式提问工具时，待确认项 / 设计建议 / 现状裁决 / 放行 / 回退确认是否都弹出了可点选项，而不是只在正文里列 A/B/C
+- [ ] 弹窗里的推荐项是否排在第一个并带 `(Recommended)`、理由是否写进选项 `description`、选项文字是否与正文逐字一致
+- [ ] 派发 Subagent 时是否写明"不要向用户提问"，由其把未决问题写进返回结果、由主 Agent 汇总后统一弹出
+
 ### 共识包专项
 
 - [ ] 共识包中是否不存在具体文件路径、组件名、函数名（除非用户点名要求复用，且已转成防分叉条款）
@@ -79,7 +83,7 @@
 
 以下行为禁止：
 
-> 本清单是输出前自检索引。各组主题的权威定义与完整说明见：共识包生成 → `./references/consensus-package.md`；交互与探测 → `./references/stage2-probe-audit.md`、`./references/subagent-recon.md`；执行 → `./references/stage4-execute.md`；教学 → `./references/optimized-requirement.md`；文档处理 → `SKILL.md` 第 2.4–2.5 节。
+> 本清单是输出前自检索引。各组主题的权威定义与完整说明见：共识包生成 → `./references/consensus-package.md`；交互（弹窗与提问） → `SKILL.md` 第 5 节、`./references/stage1-clarify.md` 第 4–5 节；探测 → `./references/stage2-probe-audit.md`、`./references/subagent-recon.md`；执行 → `./references/stage4-execute.md`；教学 → `./references/optimized-requirement.md`；文档处理 → `SKILL.md` 第 2.4–2.5 节。
 
 ### 共识包生成反模式
 
@@ -112,6 +116,9 @@
 - ❌ 探测前不告知用户、不让用户有打断的机会
 - ❌ 让探查 Subagent 顺带给出改进建议或裁决
 - ❌ 审计发现不合理只在对话里提一句，未让用户裁决就继续
+- ❌ 有交互式提问工具，却只在正文里列 A/B/C，让用户自己复制回话
+- ❌ 让探查 / 执行 Subagent 去问用户（Subagent 与用户之间没有通道，问不到也答不了）
+- ❌ 弹窗选项的文字与正文里的选项对不上，用户点完还要再解释一遍
 
 ### 执行反模式（阶段 4）
 
