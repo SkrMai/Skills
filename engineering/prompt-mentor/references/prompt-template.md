@@ -149,7 +149,7 @@
 </goal>
 
 <optimized_requirement>
-[叙述性精确版]
+[阶段 1 锁定的逐条结构化需求描述原文]
 前置依赖：[无 / 共识包 1/N 的产出]
 本次是定点修正，不是重构，也不是重新设计。
 </optimized_requirement>
