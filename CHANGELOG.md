@@ -110,15 +110,15 @@ prompt-mentor 首个版本。基于一次真实使用（为用户本地知识库
 
 ## 仓库（不设版本号）
 
-仓库脚手架、全局约定与跨 skill 的改动记录在这里，按日期排列，不设版本号。
+仓库脚手架、全局约定与跨 skill 的改动记录在这里，按日期排列，不设版本号。**约定本身以 [README 的「约定」小节](README.md#约定) 为准**，本节只记它何时变过。
 
 ### 2026-09-13
 
 - **版本模型改为按 skill 记录**：本文件由单一版本改为按 skill 分节；每个 skill 的版本条目只保留它自己的能力变更，仓库相关内容移入本节。
+- **文档分工确定**：仓库现行约定由 README 的「约定」小节唯一权威说明，本节只记变更、不复述规则。
 - `README.md` 的 skill 清单行随 skill 版本同步更新（prompt-mentor 0.3.0、0.4.0、0.4.1 各同步一次）。
 
 ### 2026-09-11
 
-- skill 按领域分类存放：`<分类>/<skill>/SKILL.md`，最多两层，不再往下嵌套。当前为 `engineering/prompt-mentor/`
-- 新增 `scripts/validate-skills.mjs`：校验 skill 目录结构、frontmatter 必填字段（`name`/`version`/`description`）、目录名与 `name` 一致性、`version` 语义化格式、全局重名
-- 新增 `.github/workflows/validate-skills.yml`：push 与 PR 时自动运行校验
+- 仓库初始化：确立 `<分类>/<skill>/SKILL.md` 的两层目录约定与三种安装方式（现行说明见 README）。
+- 新增 `scripts/validate-skills.mjs` 与 CI 工作流 `.github/workflows/validate-skills.yml`（校验项见 README「校验」）。

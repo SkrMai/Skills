@@ -66,10 +66,12 @@ node scripts/validate-skills.mjs
 
 ## 约定
 
+本节是仓库现行约定的**唯一权威说明**。[CHANGELOG.md](CHANGELOG.md) 末尾的「仓库（不设版本号）」分节只记录这些约定何时变过，不重复规则正文——改约定只改本节，CHANGELOG 里补一条变更记录即可。
+
 - **分类**：一级目录是领域（`engineering` / `writing` / `productivity` …），二级是 skill 目录；最多两层，不再往下嵌套
 - **命名**：skill 目录名即 skill 名，与 `SKILL.md` frontmatter 的 `name` 一致；全局唯一（装机到 `~/.agents/skills` 是平铺的，重名会互相覆盖）
 - **frontmatter**：必须包含 `name`、`version`、`description`；可选 `whenToUse`
 - **主文件纪律**：长清单、模板、决策树下沉到 `references/`，`SKILL.md` 只保留触发条件与规则，避免主文件膨胀
 - **写法**：规则写成可判定条件（“不得…”“必须…”），不写成“要更注意…”这类劝告
 - **版本**：**仓库本身不设版本号**，版本归属于单个 skill，以其 `SKILL.md` frontmatter 的 `version` 为准（遵循 [语义化版本](https://semver.org/lang/zh-CN/)）。某个 skill 的结构或内容变更记入 [CHANGELOG.md](CHANGELOG.md) 中该 skill 的小节；仓库新增 skill 时只增加这个新 skill 的版本，不动已有 skill 的版本号
-- **新增 skill 的步骤**：新建 `<分类>/<skill>/SKILL.md` → 跑一次校验 → 更新本文件清单表 → 在 CHANGELOG 记录 → 提交
+- **新增 skill 的步骤**：新建 `<分类>/<skill>/SKILL.md`（含 frontmatter）→ 需要时建 `references/`、`templates/` → 跑 `node scripts/validate-skills.mjs` → 在本文件「Skill 清单」加一行 → 在 CHANGELOG 的 `## <skill 名>` 下新增该 skill 的版本小节 → 提交。**要改的文件只有这三个**：新 skill 目录、本文件清单表、CHANGELOG
